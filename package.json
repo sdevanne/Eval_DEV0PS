@@ -1,0 +1,17 @@
+{
+  "name": "mini-api-release",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "release": {
+    "branches": ["main"],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  }
+}
+
