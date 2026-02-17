@@ -2,7 +2,7 @@ import http from "http";
  
 const server = http.createServer((req, res) => {
 
-  //  endpoint health
+  // endpoint health
 
   if (req.url === "/health") {
 
@@ -14,11 +14,11 @@ const server = http.createServer((req, res) => {
 
   }
  
-  // réponse par défaut
+  // 404 JSON pour toute autre route
 
-  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.writeHead(404, { "Content-Type": "application/json" });
 
-  res.end("Hello");
+  res.end(JSON.stringify({ error: "Not Found" }));
 
 });
  
@@ -27,6 +27,8 @@ server.listen(3000, () => {
   console.log("Server listening on http://localhost:3000");
 
 });
+
+ 
 
  
  
